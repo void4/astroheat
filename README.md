@@ -2,6 +2,8 @@
 
 ![Heatmap](1637016900.png)
 
+![Contour Plot](contour_1637021811.png)
+
 ## Installation
 
 Requires Python 3.6+, Tested with Python 3.9.5
