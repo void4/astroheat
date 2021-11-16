@@ -57,8 +57,8 @@ try:
 		if capture_index % 100 == 0:
 			print(capture_index)
 
-		if capture_index == 25000:
-			break
+		#if capture_index == 25000:
+		#	break
 
 		angle = Angle(capture.angle, 'deg')
 
@@ -111,14 +111,17 @@ print(len(patches), "patches")
 
 # Normalize the grid to float 0-1
 # TODO scale logarithmically?
-grid += 1
-grid = np.log(grid)
-grid /= grid.max()
 
 import pickle
 
 with open("grid.pickle", "wb+") as f:
 	f.write(pickle.dumps(grid))
+
+print("Wrote grid.")
+
+grid += 1
+grid = np.log(grid)
+grid /= grid.max()
 
 # Scale to 0-255 and cast to unsigned integer
 grid = np.uint8(grid*255)
